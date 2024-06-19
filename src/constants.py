@@ -5,7 +5,7 @@ import os
 ### project directory ########################################
 
 # TODO: set DIR_PROJECT as location for all data and models (outside git repo)
-DIR_PROJECT = "/your/project/directory/here/"
+DIR_PROJECT = os.environ["DIR_PROJECT"]
 assert os.path.exists(DIR_PROJECT), "please enter valid directory"
 
 
@@ -27,7 +27,6 @@ MODELS = {
         "vicuna-7b": "AlekseyKorshuk/vicuna-7b", 
         "alpaca-7b": "chavinlo/alpaca-native",
         "med-alpaca-7b": "medalpaca/medalpaca-7b",
-
     },
 
     'gptq': { # gpt-style architectures w quant
