@@ -11,7 +11,14 @@
 # step 3: save file, run script
 ###############################################################################
 
-DO_TRN=false
+export CUDA_VISIBLE_DEVICES=$1
+if [ -z "${VAR}" ]; then
+  export CUDA_VISIBLE_DEVICES="0"
+  echo "Defaultly set CUDA_VISIBLE_DEVICES=0"
+fi
+
+export DIR_PROJECT="./_out"
+DO_TRN=true
 DO_RUN=false
 DO_CALC=false
 n_samples=250 # n_samples to run, calculate metrics
@@ -22,12 +29,14 @@ model_list=(
     #vicuna-7b
     #alpaca-7b
     #med-alpaca-7b
-    #llama2-7b
+    llama2-7b
     #llama2-13b
+    #llama2-7b-gptq
+    #llama2-13b-gptq
 )
 
 dataset_list=(
-    #opi
+    opi
     #cxr
     #iii
     #chq
@@ -44,7 +53,7 @@ case_id_list=(
     #14
     #15
     #16
-    #300
+    300
 )
 
 for j in "${!model_list[@]}"; do

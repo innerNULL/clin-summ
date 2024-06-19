@@ -27,14 +27,15 @@ MODELS = {
         "vicuna-7b": "AlekseyKorshuk/vicuna-7b", 
         "alpaca-7b": "chavinlo/alpaca-native",
         "med-alpaca-7b": "medalpaca/medalpaca-7b",
+        "llama2-7b": "meta-llama/Llama-2-7b-hf"
     },
 
     'gptq': { # gpt-style architectures w quant
-        'llama2-7b': {
+        'llama2-7b-gptq': {
             'path': 'TheBloke/Llama-2-7B-GPTQ',
             'basename': 'model',
         },
-        'llama2-13b': {
+        'llama2-13b-gptq': {
             'path': 'TheBloke/Llama-2-13B-GPTQ',
             'basename': 'model',
         },
